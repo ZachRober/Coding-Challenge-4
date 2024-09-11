@@ -1,14 +1,8 @@
-let arrayCreator = function(nameInput, priceInput, quantityInput, lowStockLevelInput){
-    this.name = nameInput;
-    this.price = priceInput;
-    this.quantity = quantityInput;
-    this.lowStockLevel = lowStockLevelInput;//we use an object constructor function because products are similiar
-}
-const soap = new arrayCreator("soap", 1.99, 12, 5);//new creates the object which THIS points at in () we specify arguments
-const shampoo = new arrayCreator("shampoo", 4.99, 8, 5);
-const detergent = new arrayCreator("detergent", 10.99, 10, 5);
-const conditioner = new arrayCreator("conditioner", 4.49, 15, 5);
-const deodorant = new arrayCreator("deodorant", 2.99, 3, 5);
+const inventory = [{name: soap, price: 1.99, quantity: 12, lowStockLevel: 5},
+    {name: shampoo, price: 4.99, quantity: 8, lowStockLevel: 5},
+    {name: detergent, price: 10.99, quantity: 10, lowStockLevel: 5},
+    {name: conditioner, price: 4.49, quantity: 15, lowStockLevel: 5},
+    {name: deodorant, price: 2.99, quantity: 3, lowStockLevel: 5}];
 
 function displayProductDetails(x){
 let inStockStatus = (x.quantity > x.lowStockLevel) ? "In Stock": "Low Stock"; //ternary operator to create stock status   
@@ -21,4 +15,7 @@ let newquantity = (x.quantity-int);//update quantity and status
 let inStockStatus = (newquantity > x.lowStockLevel) ? "In Stock": "Low Stock";
 let newStatus = console.log(`The new quantity is ${newquantity}, status: ${inStockStatus}`);   
 return newStatus;
+}
+function checkLowStock(x){
+
 }
