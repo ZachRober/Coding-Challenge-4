@@ -19,10 +19,22 @@ return newStatus;
 
 let txt="Low stock products are: ";
 function checkLowStock(x){
-    if (x.quantity <= x.lowStockLevel) {
+if (x.quantity <= x.lowStockLevel) {
 txt += x.name + " "
 }
 return txt;
 }
-inventory.forEach(element => {checkLowStock(element)});
+inventory.forEach(element => {checkLowStock(element)});//for each iterates function over all elements
 console.log(txt);
+
+
+function calculateInventoryValue(x){
+let num=0;
+for (i=0; i<x.length;i++){
+let totalValue = (x[i].price*x[i].quantity);//loops over the length of inventory
+num+=totalValue;//accumulate total value
+}
+let total = console.log(`The total inventory value is $${num}`);
+return total;
+}
+calculateInventoryValue(inventory);
