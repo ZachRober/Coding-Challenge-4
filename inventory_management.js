@@ -1,4 +1,3 @@
-
 let arrayCreator = function(nameInput, priceInput, quantityInput, lowStockLevelInput){
     this.name = nameInput;
     this.price = priceInput;
@@ -12,6 +11,14 @@ const conditioner = new arrayCreator("conditioner", 4.49, 15, 5);
 const deodorant = new arrayCreator("deodorant", 2.99, 3, 5);
 
 function displayProductDetails(x){
-inStockStatus = (x.quantity > x.lowStockLevel) ? "In Stock": "Low Stock"; //ternary operator to create stock status   
-console.log(`The product is: ${x.name}, the price is $${x.price}, ${x.quantity} are available, status: ${inStockStatus}`);
+let inStockStatus = (x.quantity > x.lowStockLevel) ? "In Stock": "Low Stock"; //ternary operator to create stock status   
+let productCheck = console.log(`The product is: ${x.name}, the price is $${x.price}, ${x.quantity} are available, status: ${inStockStatus}`);
+return productCheck;
+}
+
+function updateStock(x, int){
+let newquantity = (x.quantity-int);//update quantity and status 
+let inStockStatus = (newquantity > x.lowStockLevel) ? "In Stock": "Low Stock";
+let newStatus = console.log(`The new quantity is ${newquantity}, status: ${inStockStatus}`);   
+return newStatus;
 }
