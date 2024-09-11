@@ -10,3 +10,8 @@ const shampoo = new arrayCreator("shampoo", 4.99, 8, 5);
 const detergent = new arrayCreator("detergent", 10.99, 10, 5);
 const conditioner = new arrayCreator("conditioner", 4.49, 15, 5);
 const deodorant = new arrayCreator("deodorant", 2.99, 3, 5);
+
+function displayProductDetails(x){
+inStockStatus = (x.quantity > x.lowStockLevel) ? "In Stock": "Low Stock"; //ternary operator to create stock status   
+console.log(`The product is: ${x.name}, the price is $${x.price}, ${x.quantity} are available, status: ${inStockStatus}`);
+}
