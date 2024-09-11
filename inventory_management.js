@@ -38,3 +38,14 @@ let total = console.log(`The total inventory value is $${num}`);
 return total;
 }
 calculateInventoryValue(inventory);
+
+function processSale(x,y){
+let pName = inventory.find(item=>item.name===x.name);
+if (!pName){
+    return console.log("The product is not in the inventory");
+}
+else{
+    return updateStock(x,y);
+}
+}
+processSale(inventory[1],0);
